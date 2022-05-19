@@ -23,12 +23,10 @@ void Car::drive(double km) {
     if (tiresCount < 4)
         throw std::logic_error("The car does not have 4 tires!");
 
-    //double fuelForKm = (log(engine.getHp()) / log(3.6) + log(weight) / log (8)) / 100;
-    int fuelForKm = 1; //litre
+//    double fuelForKm = (log(engine.getHp()) / log(3.6) + log(weight) / log (8)) / 100;
+//    double fuelNeeded = km * fuelForKm;
 
-    double fuelNeeded = km * fuelForKm;
-
-    tank.use(fuelNeeded); //throws exception if not enough fuel
+    tank.use(km); //throws exception if not enough fuel
     kmTraveled += km; //stays unchanged if exception is thrown
 }
 
@@ -79,10 +77,7 @@ Car *dragRace(Car *car1, Car *car2) {
 
     if (canDrive1)
         return car1;
-
     if (canDrive2)
         return car2;
-
     return nullptr;
-
 }

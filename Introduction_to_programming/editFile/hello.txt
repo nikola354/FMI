@@ -1,0 +1,6 @@
+hello
+from
+new
+a
+text
+file

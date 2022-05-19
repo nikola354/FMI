@@ -18,12 +18,10 @@ void FuelTank::fill(double litres) {
 }
 
 void FuelTank::use(double litres) {
-    fuel -= litres;
-
-    if (fuel < 0) {
-        fuel += litres;
+    if (fuel < litres)
         throw std::logic_error("Not enough fuel!");
-    }
+
+    fuel -= litres;
 }
 
 double FuelTank::getFuel() const {
