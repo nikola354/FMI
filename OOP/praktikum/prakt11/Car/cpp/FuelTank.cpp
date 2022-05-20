@@ -1,10 +1,5 @@
 #include "../h/FuelTank.h"
 
-FuelTank::FuelTank() {
-    capacity = 0;
-    fuel = 0;
-}
-
 FuelTank::FuelTank(double capacity) {
     this->capacity = capacity;
     this->fuel = capacity;
