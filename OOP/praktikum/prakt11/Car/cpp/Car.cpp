@@ -54,8 +54,8 @@ Car *dragRace(Car *car1, Car *car2) {
     }
 
     if (canDrive1 && canDrive2) {
-        double ratio1 = car1->weight / car1->engine->getHp();
-        double ratio2 = car2->weight / car2->engine->getHp();
+        double ratio1 = car1->getRaceRatio();
+        double ratio2 = car2->getRaceRatio();
 
         if (ratio1 < ratio2)
             return car1;
@@ -69,4 +69,8 @@ Car *dragRace(Car *car1, Car *car2) {
     if (canDrive2)
         return car2;
     return nullptr;
+}
+
+double Car::getRaceRatio() const {
+    return weight / engine->getHp();
 }
