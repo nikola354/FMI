@@ -4,6 +4,8 @@
 #include "String.h"
 #include <iostream>
 
+const int a = 4;
+
 class CarPart {
     unsigned long id;
     String producer;

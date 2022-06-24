@@ -14,6 +14,7 @@ public:
     friend std::ostream &operator<<(std::ostream &out, const Engine &other);
 
     double getHp() const;
+
 };
 
 

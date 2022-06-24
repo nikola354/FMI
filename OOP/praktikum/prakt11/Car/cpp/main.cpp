@@ -6,6 +6,7 @@
 #include "../h/FuelTank.h"
 #include "../h/Car.h"
 
+
 int main() {
     try {
         Battery b(2, 15, 0, String("Sony"), String("Very good battery!"));
@@ -22,7 +23,7 @@ int main() {
 
         FuelTank tank(50);
 
-        Car peugeot(tank, &e, &b, 50000, 200);
+        Car peugeot(tank, &e, &b, 50000, 2000);
 
         peugeot.addTire(&tire, 4);
 
@@ -30,11 +31,11 @@ int main() {
 
         std::cout << peugeot.getFuel() << std::endl;
 
-        Car golf(tank, &e, &b, 50000, 2000);
+        Car golf(tank, &e, &b, 50000, 200);
 
-        golf.addTire(&tire, 4);
+//        golf.addTire(&tire, 4);
 
-        Car *winner = dragRace(&peugeot, &golf);
+ Car *winner = dragRace(&peugeot, &golf);
 
         if (winner != nullptr)
             std::cout << winner->getFuel() << std::endl;
