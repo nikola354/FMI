@@ -21,10 +21,10 @@ Kindle::Kindle() {
         }
     } else {
         usersCount = 0;
-        usersCapacity = 1;
+        usersCapacity = 4;
         users = new User[usersCapacity];
         booksCount = 0;
-        booksCapacity = 1;
+        booksCapacity = 4;
         books = new Book[booksCapacity];
     }
 
