@@ -115,3 +115,26 @@ void ShapesContainer::writeToSVG(std::ofstream &writeFile) const {
     }
     writeFile << "</svg>";
 }
+
+ShapesContainer::ShapesContainer(const ShapesContainer &other) {
+    copy(other);
+}
+
+ShapesContainer &ShapesContainer::operator=(const ShapesContainer &other) {
+    if (this != &other) {
+        free();
+        copy(other);
+    }
+
+    return *this;
+}
+
+void ShapesContainer::copy(const ShapesContainer &other) {
+    size = other.size;
+    capacity = other.capacity;
+
+    shapes = new Shape*[capacity];
+    for (int i = 0; i < size; ++i) {
+        shapes[i] = other.shapes[i]->clone();
+    }
+}

@@ -14,8 +14,14 @@ class ShapesContainer {
 
     void free();
 
+    void copy(const ShapesContainer &other);
+
 public:
     ShapesContainer();
+
+    ShapesContainer(const ShapesContainer &other);
+
+    ShapesContainer &operator=(const ShapesContainer &other);
 
     ~ShapesContainer();
 
